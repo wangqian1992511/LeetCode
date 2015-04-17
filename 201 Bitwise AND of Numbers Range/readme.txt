@@ -1,0 +1,3 @@
+001.cpp (109ms):
+
+Obviously, this problem is about bit manipulation. Notice that on the i-th lowest bit of all the sorted integers, there should be exactly 2^i 1's and 2^i 0's appearing in repetition. The length of the sequence we should discuss is "n - m + 1". That is to say, we do not need to consider the i-th bit, if this length is larger than 2^i, since we must set this bit to zero. For the remaining bits, we only need to check whether the i-th bit of both "m" and "n" are one, because of the continuity of 1's we mentioned above. The remaining work is to express this process in a boolean equation. The time complexity is O(1).
