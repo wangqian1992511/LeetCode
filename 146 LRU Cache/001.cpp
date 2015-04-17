@@ -1,73 +1,72 @@
-struct DeListNode {
-    int val, key;
-    DeListNode *next, *prev;
-    DeListNode(int x, int y) : val(x), key(y), next(NULL), prev(NULL) {}
-};
-
 class LRUCache{
 public:
     LRUCache(int capacity) {
         this->capacity = capacity;
-        sum = 0;
+        sum = t = 0;
+        heap = new int [capacity];
+        seq = new int [capacity];
     }
     
     int get(int key) {
+        t++;
         if (cache.find(key) == cache.end())
             return -1;
         else {
-            update(cache[key]);
-            return cache[key]->val;
+            seq[pos[key]] = t;
+            sink(pos[key]);
+            return cache[key];
         }
     }
     
     void set(int key, int value) {
+        t++;
         if (cache.find(key) == cache.end()) {
-            DeListNode *p = new DeListNode(value, key);
-            if (!sum) {
-                sum++;
-                head = tail = p;
-            }
-            else if (sum < capacity) {
-                sum++;
-                insertTail(p);
+            cache[key] = value;
+            if (sum < capacity) {
+                heap[sum] = key;
+                pos[key] = sum;
+                seq[sum++] = t;
             }
             else {
-                insertTail(p);
-                DeListNode *q = head;
-                head = head->next;
-                head->prev = NULL;
-                cache.erase(cache.find(q->key));
-                delete q;
+                int rplc = heap[0];
+                cache.erase(cache.find(rplc));
+                pos.erase(pos.find(rplc));
+                heap[0] = key;
+                pos[key] = 0;
+                seq[0] = t;
+                sink(0);
             }
-            cache[key] = p;
         }
         else {
-            cache[key]->val = value;
-            update(cache[key]);
+            cache[key] = value;
+            seq[pos[key]] = t;
+            sink(pos[key]);
         }
     }
 private:
-    int capacity, sum;
-    DeListNode *head, *tail;
-    unordered_map<int, DeListNode*> cache;
-    void insertTail(DeListNode *&p) {
-        tail->next = p;
-        p->prev = tail;
-        tail = p;
-        p->next = NULL; 
-    }
-    void update(DeListNode *&p) {
-        if (!p->next) {
+    int capacity, t, sum;
+    int *heap, *seq;
+    map<int, int> cache, pos;
+    void sink(int x) {
+        int key = seq[x];
+        int tmp = heap[x];
+        while ((x << 1) + 1 < sum) {
+            int l = (x << 1) + 1;
+            int r = l + 1;
+            int t = l;
+            if ((r < sum) && (seq[r] < seq[l]))
+                t = r;
+            if (seq[t] < key) {
+                seq[x] = seq[t];
+                heap[x] = heap[t];
+                pos[heap[t]] = x;
+                x = t;
+            }
+            else
+                break;
         }
-        else if (!p->prev) {
-            head = head->next;
-            head->prev = NULL;
-            insertTail(p);
-        }
-        else {
-            p->prev->next = p->next;
-            p->next->prev = p->prev;
-            insertTail(p);
-        }
+        seq[x] = key;
+        heap[x] = tmp;
+        pos[tmp] = x;
     }
 };
