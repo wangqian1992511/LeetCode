@@ -4,4 +4,4 @@ Suppose that there are n strings and there are m characters in the shortest stri
 
 002.cpp (8ms):
 
-We can improve the time complexity by performing the binary search on the length of the longest common prefix. Then the time complexity is O(nlog(m)), if we suppose that the time complexity for string comparasion is O(1). But we should call the "substr" method frequently, the improvement may not be obvious enough. But it is a good pratice to try binary search.
+We can improve the time complexity by performing the binary search on the length of the longest common prefix. Then the time complexity is O(nlog(m)), if we suppose that the time complexity for string comparasion is O(1). But we should call the "substr" method frequently and I'm not sure about the implementation of string comparasion, the improvement may not be obvious enough. But it is a good practice to try binary search.
