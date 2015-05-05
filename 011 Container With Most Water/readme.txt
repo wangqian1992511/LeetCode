@@ -1,0 +1,3 @@
+001.cpp (28ms):
+
+As soon as I see this problem, I find it is natural to find some solution like dp or linear scan. The fact proves that this feeling is not wrong. It can be solved with double-ended linear scan. Introduce two pointers at the beginning and the end of the whole list, representing the two ends of the container. With the pointers moving and meeting each other, the width of this container is reducing. Since, we'd like to maximize the amount of water, we should expect a higher height. That is to say, we must abandon the lower line as much as we can, which is the strategy to determine the exact pointer to be moved. The time complexity of a linear scan is O(n).
