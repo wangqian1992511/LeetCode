@@ -1,14 +1,13 @@
 class Solution {
 public:
-    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+    bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
         vector<int> *adj = new vector<int> [numCourses];
         int *deg = new int [numCourses];
         fill(deg, deg + numCourses, 0);
 
         for (int i = prerequisites.size() - 1; i >= 0; i--) {
-            vector<int> e = prerequisites[i];
-            adj[e[0]].push_back(e[1]);
-            deg[e[1]]++;
+            adj[prerequisites[i].first].push_back(prerequisites[i].second);
+            deg[prerequisites[i].second]++;
         }
         
         queue<int> zero;
@@ -28,6 +27,6 @@ public:
                     zero.push(v);
             }
         }
-        return d == numCourses;
+        return d == numCourses;    
     }
 };
