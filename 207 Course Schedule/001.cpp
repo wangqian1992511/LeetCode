@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+    bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
         int *first = new int [numCourses + 1];
         int *deg = new int [numCourses];
         fill(first, first + numCourses, INT_MAX);
@@ -10,8 +10,8 @@ public:
         int nEdge = prerequisites.size();
         first[numCourses] = nEdge;
         for (int i = nEdge - 1; i >= 0; i--) {
-            first[prerequisites[i][0]] = i; 
-            deg[prerequisites[i][1]]++;
+            first[prerequisites[i].first] = i; 
+            deg[prerequisites[i].second]++;
         }
         
         queue<int> zero;
@@ -28,8 +28,8 @@ public:
             zero.pop();
             d++;
             for (int j = first[i]; j < first[i+1]; j++)
-                if (! --deg[prerequisites[j][1]])
-                    zero.push(prerequisites[j][1]);
+                if (! --deg[prerequisites[j].second])
+                    zero.push(prerequisites[j].second);
         }
         return d == numCourses;
     }
