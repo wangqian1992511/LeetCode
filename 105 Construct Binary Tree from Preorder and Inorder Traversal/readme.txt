@@ -8,4 +8,4 @@ Then, since we know the length of the left and right sub-tree, we can divide the
 
 {root value; preorder for left sub-tree; preorder for right sub-tree}
 
-By know, we can call the same function for both left and right sub-tree. We need O(n) time to find the root value. So, by Master Theorem, the whole time complexity is O(nlog(n)).
+By know, we can call the same function for both left and right sub-tree. We need O(n) time to find the root value. So, by Master Theorem, the average time complexity is O(nlog(n)), and the worst time complexity is O(n^2).
