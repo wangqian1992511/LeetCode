@@ -1,4 +1,4 @@
-001.cpp (3ms):
+001.cpp (0ms):
 
 DP problem with the time complexity of O(n) and constant extra memmory.
 
