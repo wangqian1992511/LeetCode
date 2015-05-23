@@ -1,0 +1,3 @@
+001.cpp (4ms):
+
+We can modify the code of quick sort a little bit. We only sort the partition that contains the k-th largest element.
