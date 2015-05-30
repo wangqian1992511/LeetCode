@@ -1,15 +1,14 @@
 class Solution {
 public:
     string longestPalindrome(string s) {
-        string t = "!#";
         int n = s.size();
-        for (int i = 0; i < n; i++) {
-            t += s[i];
-            t += '#';
-        }
-        t += '@';
+        int m = 2 * n + 3;
+        string t (m, '#');
+        t[0] = '!';
+        for (int i = 0; i < n; i++) 
+            t[2 * (i + 1)] =  s[i];
+        t[m-1] = '@';
         
-        int m = t.size();
         int *p = new int [m];
         fill(p, p + m, 1);
         int maxD = 1, id = 0;

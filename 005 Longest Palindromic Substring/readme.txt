@@ -30,4 +30,6 @@ This algorithm has a time complexity of O(n). Notice the inner loop. Every incre
 
 I always wonder why palindrome should be studied. Is it only a practice for beginner of programming? I searched the Internet, and it said that palindrome is meaningful in biology (sth about DNA). Unfortunately, I never had an experience of learning biology, even during my high school life. Haha~~~
 
+BTW, avoid repeating appending single characters to a string. That cost a lot of running time.
+
 

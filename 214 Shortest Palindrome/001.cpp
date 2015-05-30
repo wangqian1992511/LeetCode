@@ -1,15 +1,14 @@
 class Solution {
 public:
     string shortestPalindrome(string s) {
-        string t = "!#";
         int n = s.size();
-        for (int i = 0; i < n; i++) {
-            t += s[i];
-            t += '#';
-        }
-        t += '@';
+        int m = 2 * n + 3;
+        string t (m, '#');
+        t[0] = '!';
+        for (int i = 0; i < n; i++) 
+            t[2 * (i + 1)] =  s[i];
+        t[m-1] = '@';
         
-        int m = t.size();
         int *p = new int [m];
         fill(p, p + m, 1);
         int maxD = 0, id = 0;
@@ -34,9 +33,8 @@ public:
 			}
 
         int maxP = (now + p[now] - 4) >> 1;
-        string ans = s;
-        for (int i = maxP + 1; i < n; i++)
-            ans = s[i] + ans;
-        return ans;
+        string r = s.substr(maxP + 1, n - maxP);
+        reverse(r.begin(), r.end());
+        return r + s;
     }
 };
