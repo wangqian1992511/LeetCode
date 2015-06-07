@@ -16,7 +16,7 @@ Actually, the path is not the optimal object for BFS in this problem. Consider t
 1         4---------5
   \     /
    \   /
-	 3
+     3
 	 
 The path 4 - 5 will be visited twice in the first two files, once in 1 - 2 - 4 - 5, and once in 1 - 3 - 4 - 5. But if we use the string as the object, we only need to enque node 4 once. But instead we should record all its precedences, so that we can recover all the paths later. In this circumstance, each node will only be pushed into the queue once. Thus the time complexity for the BFS is exactly O(nm^3).
 
