@@ -1,0 +1,3 @@
+001.cpp (15ms):
+
+The time complexity is O(n). One pointer "p" is used to indicate the head of the substring. The other pointer "q" is used to indicate the next character to be added to the present substring. The minimized substring should started with a character in "T" and ended with a character in "T". So, we move the pointer "p" first to avoid the characters not in "T". If the pointer "q" is surpassed during this process, move it to the position of "p". Then kepp moving the pointer "q" until all the characters in "T" has been contained in the substring. Since duplicated characters may been contained, we should then move "p" again to obtain shorter but valid substrings. Keep conducting these three sets of pointer moving until we cannot move "p" or "q" any more.
