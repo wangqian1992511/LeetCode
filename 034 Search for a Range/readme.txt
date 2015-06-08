@@ -17,8 +17,6 @@ By now, it seems that we have four sub-arrays to deal with. But in fact, notice 
          ---------------------------------
             while loop doesn't run here
 
-I wish this explanation is clear enough. I will also update this explanation to Github as well.
-
 002.cpp(12ms):
 
 Use binary search twice to determine the left boundary and the right boundary. Pay attention to the way for determining the middle pointer and the moving pointer when a[m] is equal to target.
