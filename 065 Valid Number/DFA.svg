@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 DFA.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="5.58645in" height="3.76206in"
+		viewBox="0 0 402.225 270.868" xml:space="preserve" color-interpolation-filters="sRGB" class="st11">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {visibility:visible}
+		.st2 {fill:#5b9bd5;fill-opacity:0.22;filter:url(#filter_2);stroke:#5b9bd5;stroke-opacity:0.22}
+		.st3 {fill:#5b9bd5;stroke:#c8c8c8;stroke-width:0.25}
+		.st4 {fill:#feffff;font-family:Calibri;font-size:0.666664em}
+		.st5 {marker-end:url(#mrkr4-18);stroke:#5b9bd5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st6 {fill:#5b9bd5;fill-opacity:1;stroke:#5b9bd5;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st7 {fill:#ffffff;stroke:none;stroke-linecap:butt}
+		.st8 {fill:#4f88bb;font-family:Calibri;font-size:1.00001em}
+		.st9 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st10 {fill:#2d71ae;stroke:#c8c8c8;stroke-width:0.25}
+		.st11 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-18" class="st6" v:arrowType="4" v:arrowSize="2" v:setback="7.04" refX="-7.04" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
+		</marker>
+	</defs>
+	<defs id="Filters">
+		<filter id="filter_2">
+			<feGaussianBlur stdDeviation="2"/>
+		</filter>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="流程图" v:index="0"/>
+		<v:layer v:name="连接线" v:index="1"/>
+		<g id="shape4-1" v:mID="4" v:groupContext="shape" v:layerMember="0" transform="translate(12.9921,-100.926)">
+			<title>车船使用税</title>
+			<desc>St 1</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.0079" cy="253.86" width="34.02" height="34.0157"/>
+			<g id="shadow4-2" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st2"/>
+			</g>
+			<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st3"/>
+			<text x="10.9" y="256.26" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>St 1</text>		</g>
+		<g id="shape5-7" v:mID="5" v:groupContext="shape" v:layerMember="0" transform="translate(89.5276,-100.926)">
+			<title>车船使用税.5</title>
+			<desc>P/N 2</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.0079" cy="253.86" width="34.02" height="34.0157"/>
+			<g id="shadow5-8" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st2"/>
+			</g>
+			<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st3"/>
+			<text x="7.88" y="256.26" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>P/N 2</text>		</g>
+		<g id="shape6-13" v:mID="6" v:groupContext="shape" v:layerMember="1" transform="translate(47.0079,-110.847)">
+			<title>动态连接线</title>
+			<desc>+/-</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="22.6772" cy="263.781" width="60" height="22.4037"/>
+			<path d="M0 263.78 L35.48 263.78" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="15.5345" y="256.582" width="14.2852" height="14.4001" class="st7"/>
+			<text x="15.53" y="267.38" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>+/-</text>		</g>
+		<g id="shape8-21" v:mID="8" v:groupContext="shape" v:layerMember="0" transform="translate(89.5276,-177.461)">
+			<title>车船使用税.8</title>
+			<desc>Pnt 4</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.0079" cy="253.86" width="34.02" height="34.0157"/>
+			<g id="shadow8-22" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st2"/>
+			</g>
+			<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st3"/>
+			<text x="8.57" y="256.26" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Pnt 4</text>		</g>
+		<g id="shape9-27" v:mID="9" v:groupContext="shape" v:layerMember="1" transform="translate(30,-134.942)">
+			<title>动态连接线.9</title>
+			<desc>.</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="3.55271E-015" cy="231.183" width="60" height="22.4037"/>
+			<path d="M0 270.87 L0 211.34 L52.49 211.34" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="-1.51465" y="223.983" width="3.02921" height="14.4001" class="st9"/>
+			<text x="-1.51" y="234.78" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.</text>		</g>
+		<g id="shape10-34" v:mID="10" v:groupContext="shape" v:layerMember="1" transform="translate(99.4488,-134.942)">
+			<title>动态连接线.10</title>
+			<desc>.</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="7.08661" cy="249.608" width="60" height="22.4037"/>
+			<path d="M7.09 270.87 L7.09 235.39" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="5.57197" y="242.408" width="3.02921" height="14.4001" class="st9"/>
+			<text x="5.57" y="253.21" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.</text>		</g>
+		<g id="group11-41" transform="translate(177.402,-100.926)" v:mID="11" v:groupContext="group" v:layerMember="0">
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<title>停止状态.11</title>
+			<desc>Int 3</desc>
+			<g id="shape12-42" v:mID="12" v:groupContext="shape" v:layerMember="0">
+				<title>工作表.12</title>
+				<g id="shadow12-43" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<path d="M0 253.86 A17.0079 17.0079 0 0 1 34.02 253.86 A17.0079 17.0079 0 1 1 0 253.86 Z" class="st2"/>
+				</g>
+				<path d="M0 253.86 A17.0079 17.0079 0 0 1 34.02 253.86 A17.0079 17.0079 0 1 1 0 253.86 Z" class="st10"/>
+			</g>
+			<g id="shape13-47" v:mID="13" v:groupContext="shape" v:layerMember="0" transform="translate(3.40157,-3.40157)">
+				<title>工作表.13</title>
+				<path d="M0 257.26 A13.6063 13.6063 0 0 1 27.21 257.26 A13.6063 13.6063 0 1 1 0 257.26 Z" class="st3"/>
+			</g>
+			<g id="shape11-49" v:mID="11" v:groupContext="groupContent" v:layerMember="0">
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="17.0079" cy="253.86" width="34.02" height="34.0157"/>
+				<g id="shadow11-50" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
+				<text x="9.63" y="256.26" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Int 3</text>			</g>
+		</g>
+		<g id="shape14-52" v:mID="14" v:groupContext="shape" v:layerMember="1" transform="translate(123.543,-110.847)">
+			<title>动态连接线.14</title>
+			<desc>isDigit</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="31.1811" cy="252.443" width="60" height="22.4037"/>
+			<path d="M0 263.78 L46.82 263.78" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="16.178" y="245.243" width="30.0061" height="14.4001" class="st9"/>
+			<text x="16.18" y="256.04" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>isDigit</text>		</g>
+		<g id="shape16-59" v:mID="16" v:groupContext="shape" v:layerMember="1" transform="translate(30,-100.926)">
+			<title>动态连接线.16</title>
+			<path d="M0 270.87 L0 292.13 L126.14 292.13 L126.14 253.86 L140.36 253.86" class="st5"/>
+		</g>
+		<g id="shape17-64" v:mID="17" v:groupContext="shape" v:layerMember="1" transform="translate(187.323,-93.8394)">
+			<title>动态连接线.17</title>
+		</g>
+		<g id="shape21-65" v:mID="21" v:groupContext="shape" v:layerMember="1" transform="translate(194.409,-100.926)">
+			<title>动态连接线.21</title>
+			<desc>isDigit</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="38.2677" cy="292.128" width="60" height="22.4037"/>
+			<path d="M0 270.87 L0 292.13 L38.27 292.13 L38.27 253.86 L24.05 253.86" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="23.2646" y="284.928" width="30.0061" height="14.4001" class="st9"/>
+			<text x="23.26" y="295.73" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>isDigit</text>		</g>
+		<g id="group25-72" transform="translate(177.402,-177.461)" v:mID="25" v:groupContext="group" v:layerMember="0">
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<title>停止状态.25</title>
+			<desc>Dec 5</desc>
+			<g id="shape26-73" v:mID="26" v:groupContext="shape" v:layerMember="0">
+				<title>工作表.26</title>
+				<g id="shadow26-74" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<path d="M0 253.86 A17.0079 17.0079 0 0 1 34.02 253.86 A17.0079 17.0079 0 1 1 0 253.86 Z" class="st2"/>
+				</g>
+				<path d="M0 253.86 A17.0079 17.0079 0 0 1 34.02 253.86 A17.0079 17.0079 0 1 1 0 253.86 Z" class="st10"/>
+			</g>
+			<g id="shape27-78" v:mID="27" v:groupContext="shape" v:layerMember="0" transform="translate(3.40157,-3.40157)">
+				<title>工作表.27</title>
+				<path d="M0 257.26 A13.6063 13.6063 0 0 1 27.21 257.26 A13.6063 13.6063 0 1 1 0 257.26 Z" class="st3"/>
+			</g>
+			<g id="shape25-80" v:mID="25" v:groupContext="groupContent" v:layerMember="0">
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="17.0079" cy="253.86" width="34.02" height="34.0157"/>
+				<g id="shadow25-81" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
+				<text x="7.93" y="256.26" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Dec 5</text>			</g>
+		</g>
+		<g id="shape28-83" v:mID="28" v:groupContext="shape" v:layerMember="1" transform="translate(123.543,-187.383)">
+			<title>动态连接线.28</title>
+			<desc>isDigit</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="26.9291" cy="263.781" width="60" height="22.4037"/>
+			<path d="M0 263.78 L46.82 263.78" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="11.926" y="256.582" width="30.0061" height="14.4001" class="st9"/>
+			<text x="11.93" y="267.38" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>isDigit</text>		</g>
+		<g id="shape29-90" v:mID="29" v:groupContext="shape" v:layerMember="1" transform="translate(187.323,-134.942)">
+			<title>动态连接线.29</title>
+			<desc>.</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="7.08661" cy="249.608" width="60" height="22.4037"/>
+			<path d="M7.09 270.87 L7.09 235.39" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="5.57197" y="242.408" width="3.02921" height="14.4001" class="st9"/>
+			<text x="5.57" y="253.21" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>.</text>		</g>
+		<g id="shape30-97" v:mID="30" v:groupContext="shape" v:layerMember="1" transform="translate(194.409,-211.477)">
+			<title>动态连接线.30</title>
+			<desc>isDigit</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="38.2677" cy="249.608" width="60" height="22.4037"/>
+			<path d="M0 270.87 L0 249.61 L38.27 249.61 L38.27 287.88 L24.05 287.88" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="23.2646" y="242.408" width="30.0061" height="14.4001" class="st9"/>
+			<text x="23.26" y="253.21" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>isDigit</text>		</g>
+		<g id="shape31-104" v:mID="31" v:groupContext="shape" v:layerMember="0" transform="translate(251.102,-140.611)">
+			<title>车船使用税.31</title>
+			<desc>E 6</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.0079" cy="253.86" width="34.02" height="34.0157"/>
+			<g id="shadow31-105" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st2"/>
+			</g>
+			<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st3"/>
+			<text x="12.12" y="256.26" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>E 6</text>		</g>
+		<g id="shape36-110" v:mID="36" v:groupContext="shape" v:layerMember="1" transform="translate(194.409,-183.131)">
+			<title>动态连接线.36</title>
+			<desc>e/E</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="36.5206" cy="279.372" width="60" height="22.4037"/>
+			<path d="M0 276.54 L5.76 279.37 L66.66 279.37" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="28.2881" y="272.172" width="16.4649" height="14.4001" class="st9"/>
+			<text x="28.29" y="282.97" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>e/E</text>		</g>
+		<g id="shape37-117" v:mID="37" v:groupContext="shape" v:layerMember="1" transform="translate(194.409,-130.69)">
+			<title>动态连接线.37</title>
+			<desc>e/E</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="36.8504" cy="263.781" width="60" height="22.4037"/>
+			<path d="M0 266.62 L66.68 261.49" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="28.6179" y="256.582" width="16.4649" height="14.4001" class="st9"/>
+			<text x="28.62" y="267.38" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>e/E</text>		</g>
+		<g id="shape38-124" v:mID="38" v:groupContext="shape" v:layerMember="0" transform="translate(364.488,-140.611)">
+			<title>车船使用税.38</title>
+			<desc>P/N 7</desc>
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.0079" cy="253.86" width="34.02" height="34.0157"/>
+			<g id="shadow38-125" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+				<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st2"/>
+			</g>
+			<path d="M0 253.86 A17.0079 17.0079 0 1 1 34.02 253.86 A17.0079 17.0079 0 0 1 0 253.86 Z" class="st3"/>
+			<text x="7.88" y="256.26" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>P/N 7</text>		</g>
+		<g id="shape40-130" v:mID="40" v:groupContext="shape" v:layerMember="1" transform="translate(285.118,-150.532)">
+			<title>动态连接线.40</title>
+			<desc>+/-</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="39.685" cy="263.781" width="60" height="22.4037"/>
+			<path d="M0 263.78 L72.33 263.78" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="32.5424" y="256.582" width="14.2852" height="14.4001" class="st9"/>
+			<text x="32.54" y="267.38" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>+/-</text>		</g>
+		<g id="group41-137" transform="translate(313.465,-217.146)" v:mID="41" v:groupContext="group" v:layerMember="0">
+			<v:custProps>
+				<v:cp v:nameU="Cost" v:lbl="成本" v:type="7" v:format="@" v:langID="2052"/>
+				<v:cp v:nameU="Duration" v:lbl="持续时间" v:type="2" v:langID="2052"/>
+				<v:cp v:nameU="Resources" v:lbl="资源" v:langID="2052"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<title>停止状态.41</title>
+			<desc>Exp 8</desc>
+			<g id="shape42-138" v:mID="42" v:groupContext="shape" v:layerMember="0">
+				<title>工作表.42</title>
+				<g id="shadow42-139" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<path d="M0 253.86 A17.0079 17.0079 0 0 1 34.02 253.86 A17.0079 17.0079 0 1 1 0 253.86 Z" class="st2"/>
+				</g>
+				<path d="M0 253.86 A17.0079 17.0079 0 0 1 34.02 253.86 A17.0079 17.0079 0 1 1 0 253.86 Z" class="st10"/>
+			</g>
+			<g id="shape43-143" v:mID="43" v:groupContext="shape" v:layerMember="0" transform="translate(3.40157,-3.40157)">
+				<title>工作表.43</title>
+				<path d="M0 257.26 A13.6063 13.6063 0 0 1 27.21 257.26 A13.6063 13.6063 0 1 1 0 257.26 Z" class="st3"/>
+			</g>
+			<g id="shape41-145" v:mID="41" v:groupContext="groupContent" v:layerMember="0">
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="17.0079" cy="253.86" width="34.02" height="34.0157"/>
+				<g id="shadow41-146" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
+				<text x="8.29" y="256.26" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Exp 8</text>			</g>
+		</g>
+		<g id="shape44-148" v:mID="44" v:groupContext="shape" v:layerMember="1" transform="translate(268.11,-174.627)">
+			<title>动态连接线.44</title>
+			<desc>isDigit</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="62.3622" cy="259.529" width="60" height="22.4037"/>
+			<path d="M0 270.87 L0 249.61 L62.36 249.61 L62.36 235.39" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="47.3591" y="252.33" width="30.0061" height="14.4001" class="st9"/>
+			<text x="47.36" y="263.13" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>isDigit</text>		</g>
+		<g id="shape45-155" v:mID="45" v:groupContext="shape" v:layerMember="1" transform="translate(381.496,-174.627)">
+			<title>动态连接线.45</title>
+			<path d="M0 270.87 L0 249.61 L-51.02 249.61 L-51.02 235.39" class="st5"/>
+		</g>
+		<g id="shape46-160" v:mID="46" v:groupContext="shape" v:layerMember="1" transform="translate(313.465,-227.068)">
+			<title>动态连接线.46</title>
+			<desc>isDigit</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.0079" cy="238.27" width="60" height="22.4037"/>
+			<path d="M0 263.78 L-21.26 263.78 L-21.26 238.27 L55.28 238.27 L55.28 263.78 L41.06 263.78" class="st5"/>
+			<rect v:rectContext="textBkgnd" x="2.00476" y="231.07" width="30.0061" height="14.4001" class="st9"/>
+			<text x="2" y="241.87" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>isDigit</text>		</g>
+	</g>
+</svg>
