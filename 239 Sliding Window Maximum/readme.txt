@@ -1,0 +1,3 @@
+001.cpp (96ms):
+
+This problem is the same as problem 2823 on POJ. It can be solved with many different data structures. But to solve it with O(n) time complexity, a priority deque is needed. Notice that if "i < j" and "a[i] < a[j]" holds at the same time in a window, then "a[i]" will never be used as the maximum value in any value. Thus, we should maintain a priority deque by deleting this kind of "a[i]", when we are discussing a certain "a[j]". 
