@@ -1,3 +1,4 @@
 001.cpp (16ms):
+001.py (52ms):
 
-Recursively set the value of each node as the value of its next node. Then consider if it is the second last node. If so, direcly set its next node as NULL.
+It's easy to delete the next node for any given node. To delete the present node, we can change the value of this node to the value in its next node, and then delete the next node.
