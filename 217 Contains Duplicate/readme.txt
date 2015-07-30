@@ -1,3 +1,4 @@
 001.cpp (52ms):
+001.py (56ms):
 
-O(n) solution with hash table.
+O(n) solution with a set.

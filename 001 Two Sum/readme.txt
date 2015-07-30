@@ -1,4 +1,5 @@
 001.cpp (16ms):
+001.py (48ms):
 
 We use a hash table to store the elements that has already been checked. When we check an element "x", we can look up the hash table to see whether "target - x" has been checked or not. The time complexity is O(n).
 
