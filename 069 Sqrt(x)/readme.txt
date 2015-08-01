@@ -6,3 +6,6 @@ Newton's Method.
 001.py (68ms):
 
 Binary Search.
+
+002.py (72ms):
+Build-in math module in Python.
