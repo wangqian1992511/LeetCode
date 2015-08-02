@@ -18,23 +18,18 @@ private:
     vector<string> ans;
     int64_t st, en;
     void update() {
-        string s = itoa(st);
-        if (st < en) 
-            s += "->" + itoa(en);
+        string s;
+        itoa(s, st);
+        if (st < en) {
+            string t;
+            itoa(t, en);
+            s += "->" + t;
+        }
         ans.push_back(s);
     }
-    string itoa(int64_t x) {
-        if (!x) return "0";
-        string ans = "";
-        bool isNeg = (x < 0);
-        if (isNeg)  
-            x = -x;
-        while (x) {
-            ans = char(x % 10 + '0') + ans;
-            x /= 10;
-        }
-        if (isNeg) 
-            ans = "-" + ans;
-        return ans;
+    void itoa(string &s, int x) {
+        stringstream sin;
+        sin << x;
+        sin >> s;
     }
 };

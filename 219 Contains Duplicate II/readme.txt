@@ -1,3 +1,4 @@
-001.cpp (56ms):
+001.cpp (28ms):
+001.py(56ms):
 
-Use three hash tables, tot for recording the times of apperance, one for recording the first apperance, and two for recording the second appearance.
+Use a set the maintain the element in a window with the length of "k".
