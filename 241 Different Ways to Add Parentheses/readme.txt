@@ -1,4 +1,5 @@
 001.cpp (4ms):
+001.py (56ms):
 
 Use divide and conquer to solve the problem. To find the time complexity, since we have
 
