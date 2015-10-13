@@ -10,7 +10,7 @@ ababa{c}aefh[m]
 
 If there is no character at the position of "m", the matching is over. If "m" never appears in the pattern, diretly shift the starting character of the pattern, so that "pattern[0]" is align with "text[nP - j + i + 1]".
 
-If "m" appears in the pattern, then we will shift the string based on the prefix function "pi". Here, "pi[i]" means the length of the longest prefix of the pattern, as a suffix for the first "i" characters of the pattern. 
+If "m" appears in the pattern, then we will shift the string based on the prefix function "pi". Here, "pi[i]" means the length of the longest prefix of the pattern, as a suffix for the first "i" characters of the pattern. Or, let's say, if we mismatch at "str[i]", then we should try "str[p[i]]".
 
 e.g.
 str: a x a y a x a x a
