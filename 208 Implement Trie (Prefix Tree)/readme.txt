@@ -1,5 +1,5 @@
 001.cpp (52ms):
-002.cpp (63ms):
+002.cpp (88ms):
 001.py (504ms):
 
 This is my first experience on Trie. Obviously, this problem can be solved with unordered_map, but maybe it's better to purely practice designing the data structure.

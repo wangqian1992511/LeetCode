@@ -9,46 +9,24 @@ public:
      * @return    The number of characters read
      */
     Solution () {
-        mem = new char [4];
         offset = memM = 0;
     }
     int read(char *buf, int n) {
-        int cnt = 0;
-        if (offset <= n) {
-            memcpy(buf, mem + memM, offset);
-            cnt += offset;
-            n -= offset;
-            offset = 0;
-            memM = 0;
-        }
-        else {
-            memcpy(buf, mem + memM, n);
-            cnt += n;
-            offset -= n;
-            memM += n;
-            n = 0;
-        }
-        while (n) {
-            int x = read4(mem);
-            if (!x) break;
-            if (x <= n) {
-                memcpy(buf + cnt, mem, x);
-                cnt += x;
-                n -= x;
-                offset = 0;
-                memM = 0;
-            }
-            else {
-                memcpy(buf + cnt, mem, n);
-                cnt += n;
-                offset = x - n;
-                memM = n;
-                n = 0;
-            }
-        }
+        int out, cnt = 0;
+        copyData(buf, cnt, n, offset);
+        while (n && (out = read4(mem)))
+            copyData(buf, cnt, n, out);
         return cnt;
     }
 private:
-    char* mem;
+    char mem[4];
     int offset, memM;
+    void copyData(char *buf, int &cnt, int &want, int out) {
+        int x = min(out, want);
+        memcpy(buf + cnt, mem + memM, x);
+        offset = max(0, out - want);
+        memM = offset ? memM + x : 0;
+        cnt += x;
+        want -= x;
+    }
 };

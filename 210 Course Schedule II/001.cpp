@@ -5,9 +5,9 @@ public:
         int *deg = new int [numCourses];
         fill(deg, deg + numCourses, 0);
         
-        for (int i = prerequisites.size() - 1; i >= 0; i--) {
-            adj[prerequisites[i].second].push_back(prerequisites[i].first);
-            deg[prerequisites[i].first]++;
+        for (auto it = prerequisites.begin(); it != prerequisites.end(); it++) {
+            adj[it->second].push_back(it->first);
+            deg[it->first]++;
         }
         
         queue<int> zero;
@@ -15,18 +15,15 @@ public:
             if (!deg[i]) 
                 zero.push(i);
                 
-        int u, v, n; 
+        int u, v; 
         vector<int> ans;
         while (!zero.empty()) {
             u = zero.front();
-            n = adj[u].size();
             zero.pop();
             ans.push_back(u);
-            for (int j = 0; j < n; j++) {
-                v = adj[u][j];
-                if (! --deg[v]) 
-                    zero.push(v);
-            }
+            for (auto it = adj[u].begin(); it != adj[u].end(); it++) 
+                if (! --deg[*it])
+                    zero.push(*it);
         }        
         if (ans.size() != numCourses)
             ans.clear();

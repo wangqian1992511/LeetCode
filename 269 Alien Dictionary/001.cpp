@@ -13,11 +13,11 @@ public:
                 }
         }
         
-        int deg[26];
-        fill(deg, deg + 26, 0);
+        int deg[256];
+        fill(deg, deg + 256, 0);
         for (auto e = edge.begin(); e != edge.end(); e++)
             for (auto y = e->second.begin(); y != e->second.end(); y++)
-                deg[*y - 'a']++;
+                deg[*y]++;
                 
         unordered_set<char> cand;
         for (int i = 0; i < n; i++)
@@ -27,7 +27,7 @@ public:
                         
         queue<char> q;  
         for (auto ch = cand.begin(); ch != cand.end(); ch++)
-            if (!deg[*ch - 'a'])
+            if (!deg[*ch])
                 q.push(*ch);
         
         string st = "";
@@ -36,8 +36,8 @@ public:
             q.pop();
             st += x;
             for (auto e = edge[x].begin(); e != edge[x].end(); e++) {
-                deg[*e - 'a']--;
-                if (!deg[*e - 'a'])
+                deg[*e]--;
+                if (!deg[*e])
                     q.push(*e);
             }
         }

@@ -2,6 +2,7 @@ class Solution {
 public:
     bool canWin(string s) {
         int n = s.size();
+        unordered_map<string, bool> hash;
         if (hash.find(s) == hash.end()) {
             hash[s] = false;
             for (int i = 1; i < n; i++)
@@ -11,8 +12,6 @@ public:
                         break;
                 }
         }
-        return hash[s];    
+        return hash[s];
     }
-private:
-    unordered_map<string, bool> hash;
 };
