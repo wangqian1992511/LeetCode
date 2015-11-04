@@ -1,47 +1,41 @@
 class Solution {
 public:
     double findMedianSortedArrays(vector<int> &A, vector<int> &B) {
-        int m = A.size(), n = B.size();
-        if (!n) 
-            return 0.5 * (A[m >> 1] + A[(m-1) >> 1]);
-        if (!m) 
-            return 0.5 * (B[n >> 1] + B[(n-1) >> 1]);
-        return 0.5 * (findKth(A, m, B, n, (m+n+1) >> 1) + findKth(A, m, B, n, (m+n+2) >> 1));
+        int len = A.size() + B.size();
+        if (len & 1)
+            return findKth(A, B, len >> 1);
+        return 0.5 * (findKth(A, B, len >> 1) + findKth(A, B, (len - 1) >> 1));
     }
 private:
-    int findKth(vector<int> &A, int m, vector<int> &B, int n, int k) {
-        int p = findKthInA(A, m, B, n, k);
-        if (p < m) 
+    int findKth(vector<int> &A, vector<int> &B, int k) {
+        int lenA = A.size(), lenB = B.size();
+        
+        int p = findKthInA(A, B, k);
+        if (p < lenA)
             return A[p];
-        p = findKthInA(B, n, A, m, k);
-        if (p < n) 
+        
+        p = findKthInA(B, A, k);
+        if (p < lenB)
             return B[p];
-        return -1000000000;
+        
+        return INT_MAX;
     }
-    int findKthInA(vector<int> &A, int m , vector<int> &B, int n, int k) {
-        int l = 0, r = m-1;
-        int q, s, p;
-        while (l <= r) {
-            p = (l + r) >> 1;
-            q = k-p-2;
-            s = k-p-1;
-			if (s <= 0) {
-				if ((p == k-1) && (A[p] <= B[0]))
-					return p;
-				r = p - 1;
-			}
-			else if (s >= n) {
-				if ((n+p == k-1) && (A[p] >= B[n-1]))
-					return p;
-				l = p + 1;
-			}
-			else if (B[q] > A[p]) 
-				l = p + 1;
-			else if (B[s] < A[p]) 
-				r = p - 1;
-			else 
-				return p;
+    int findKthInA(vector<int> &A, vector<int> &B, int k) {
+        int lenA = A.size(), lenB = B.size();
+        int left = 0, right = lenA - 1;
+        
+        while (left <= right) {
+            int mid = (left + right) >> 1;
+            int midLeft = k - mid - 1;
+            int midRight = k - mid;
+            
+            if ((midLeft >= lenB) || (midLeft >= 0) && (B[midLeft] > A[mid]))
+                left = mid + 1;
+            else if ((midRight < 0) || (midRight < lenB) && (B[midRight] < A[mid]))
+                right = mid - 1;
+            else
+                return mid;
         }
-        return m;
+        return lenA;
     }
 };
