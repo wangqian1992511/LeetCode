@@ -19,13 +19,12 @@ public:
             if (str[i] == '(')
                 jump[i] = (str[i + 1] == '(') ? jump[i + 1] : (i + 1);
         }
-
+        
         dfs(0);
         return ans;
     }
 private:
     int cnt, *numAntiP, *jump, strLen, maxAnsLen;
-    unordered_set<string> have;
     vector<string> ans;
     string str, tmp;
     void dfs(int i) {
@@ -44,7 +43,7 @@ private:
                 cnt++;
             }
             if (numAntiP[i + 1] >= cnt)
-                dfs(jump[i]); 
+                dfs(jump[i]);
         }
         else if (str[i] == '(') {
             if (numAntiP[i + 1] > cnt) {
@@ -54,7 +53,7 @@ private:
                 tmp.pop_back();
                 cnt--;
             }
-            dfs(jump[i]); 
+            dfs(jump[i]);
         }
         else {
             tmp.push_back(str[i]);
