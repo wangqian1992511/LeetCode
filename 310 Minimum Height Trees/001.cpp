@@ -12,35 +12,29 @@ public:
         }
         
         bool *vis = new bool [n];
-        int *lvl = new int [n];
         fill(vis, vis + n, false);
-        queue<int> q;
+        queue<int> q[2];
         for (int i = 0; i < n; i++)
-            if (deg[i] == 1) {
-                q.push(i);
-                lvl[i] = 0;
-            }
+            if (deg[i] <= 1)
+                q[0].push(i);
         
-        while (!q.empty()) {
-            int u = q.front();
-            q.pop();
-            for (auto it = adj[u].begin(); it != adj[u].end(); it++) {
-                deg[*it]--;
-                if (deg[*it] == 1) {
-                    q.push(*it);
-                    lvl[*it] = lvl[u] + 1;
+        vector<int> ans;
+        bool flag = false;
+        while (!q[flag].empty()) {
+            ans.clear();
+            while (!q[flag].empty()) {
+                int u = q[flag].front();
+                q[flag].pop();
+                ans.push_back(u);
+                for (auto it = adj[u].begin(); it != adj[u].end(); it++) {
+                    deg[*it]--;
+                    if (deg[*it] == 1)
+                        q[!flag].push(*it);
                 }
             }
+            flag = !flag;
         }
-        
-        int maxV = -1;
-        vector<int> ans;
-        for (int i = 0; i < n; i++)
-            if (lvl[i] > maxV)
-                maxV = lvl[i];
-        for (int i = 0; i < n; i++)
-            if (lvl[i] == maxV)
-                ans.push_back(i);
         return ans;
     }
+    
 };
