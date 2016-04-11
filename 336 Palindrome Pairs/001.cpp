@@ -1,28 +1,46 @@
 class Solution {
 public:
-    int romanToInt(string s) {
-        int ans = 0, pre = 0, now;
-        int n = s.size();
-        for (int i = n-1; i >= 0; i--) {
-            now = romanChToInt(s[i]);
-            if (now < pre) 
-                ans -= now;
-            else
-                ans += now;
-            pre = now;
+    vector<vector<int>> palindromePairs(vector<string>& words) {
+        int n = words.size();
+        for (int i = 0; i < n; i++)
+            hash[words[i]] = i;
+        for (int i = 0; i < n; i++) {
+            string now = words[i];
+            
+            if (isPalin(now) && (hash.find("") != hash.end()) && (hash[""] != i)) {
+                ans.push_back({i, hash[""]});
+                ans.push_back({hash[""], i});
+            }
+            
+            int m = now.size();
+            for (int j = 1; j < m; j++) {
+                string other = now.substr(0, j);
+                reverse(other.begin(), other.end());
+                if (isPalin(now + other) && (hash.find(other) != hash.end()) && (hash[other] != i))
+                    ans.push_back({i, hash[other]});
+                
+                other = now.substr(m - j, j);
+                reverse(other.begin(), other.end());
+                if (isPalin(other + now) && (hash.find(other) != hash.end()) && (hash[other] != i))
+                    ans.push_back({hash[other], i});
+            }
+            
+            string other = now;
+            reverse(other.begin(), other.end());
+            if (isPalin(now + other) && (hash.find(other) != hash.end()) && (hash[other] != i))
+                ans.push_back({i, hash[other]});
         }
         return ans;
     }
 private:
-    int romanChToInt(char ch) {
-        switch (ch) {
-            case 'I': return 1;
-            case 'V': return 5;
-            case 'X': return 10;
-            case 'L': return 50;
-            case 'C': return 100;
-            case 'D': return 500;
-            case 'M': return 1000;
-        }
+    int n;
+    vector<vector<int>> ans;
+    unordered_map<string, int> hash;
+    bool isPalin(string st) {
+        int n = st.size();
+        for (int i = 0; i < n / 2; i++)
+            if (st[i] != st[n - 1 - i])
+                return false;
+        return true;
     }
 };
