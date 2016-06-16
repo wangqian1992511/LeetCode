@@ -13,11 +13,13 @@ public:
         for (auto it: cnt)
             sortedCnt[-it.second].push_back(it.first);
 
+        pair<int, vector<char>> head = *sortedCnt.begin();
+        if (k * (-head.first - 1) + head.second.size() > n)
+            return "";
+
         string ans(str.size(), '@');
         int p = 0, round = 0;
         for (auto it: sortedCnt) {
-            if (k * (-it.first - 1) + it.second.size() > n)
-                return "";
             int maxN = -it.first;
             for (auto ch: it.second) {
                 for (int i = 0; i < maxN; i++) {

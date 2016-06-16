@@ -16,7 +16,7 @@ The same letters are at least distance 3 from each other.
 Example 2:
 
 ```
-str = "aaabc", k = 3 
+str = "aaabc", k = 3
 
 Answer: ""
 
@@ -36,9 +36,9 @@ The same letters are at least distance 2 from each other.
 
 # Solution
 
-Arrange the letters from the most frequent ones to the least. Place the letters into the index of 0, k, 2k, 3k, etc. If the end is reached, we should then fill the index of 1, 1+k, 1+2k, etc. After this process, we should get a valid answer. 
+Arrange the letters from the most frequent ones to the least. Place the letters into the index of 0, k, 2k, 3k, etc. If the end is reached, we should then fill the index of 1, 1+k, 1+2k, etc. After this process, we should get a valid answer.
 
-The case when there is no solution is that, we cannot guarantee the least distance requirement, even if the letters are arranged as evenly as possible. If the following inequality is true for any letter "ch", then there is no solution:
+The case when there is no solution is that, we cannot guarantee the least distance requirement, even if the letters are arranged as evenly as possible. If the following inequality is true for any letter "ch" (only need to check the most frequent letter), then there is no solution:
 
 ```
 k * (cnt[ch] - 1) + tot[cnt[ch]] > len(str)
