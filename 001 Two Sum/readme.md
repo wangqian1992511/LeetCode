@@ -18,5 +18,5 @@ It is not interesting to implement a "sort and binary search" or "sort and two-p
 
 # Running Time
 
-- cpp version: 16 ms
-- python version: 48 ms
+- cpp version: 16 ms (001.cpp)
+- python version: 48 ms (001.py)

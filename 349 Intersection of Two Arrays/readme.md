@@ -17,5 +17,5 @@ Put all the elements in num1 into one set. Then check whether the elements in nu
 
 # Running Time
 
-- cpp version: 12 ms
-- python version: 48 ms
+- cpp version: 12 ms (001.cpp)
+- python version: 48 ms (001.py)

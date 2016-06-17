@@ -28,5 +28,5 @@ Straightforward O(n) solution is applied. Pay attention to the situation when:
 
 # Running Time
 
-- cpp version: 40 ms
-- python version: 164 ms
+- cpp version: 40 ms (001.cpp)
+- python version: 164 ms (001.py)
