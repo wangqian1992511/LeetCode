@@ -1,42 +1,31 @@
 class Solution {
 public:
     bool isScramble(string s1, string s2) {
-        n = s1.size();
+        int n = s1.size();
         if (!n) return true;
-        dp = new int** [n+1];
-        for (int i = 0; i <= n; i++) {
-            dp[i] = new int* [n+1];
-            for (int j = 0; j <= n; j++) {
-                dp[i][j] = new int [n+1];
-                fill(dp[i][j], dp[i][j] + n + 1, -1);
+
+        bool*** dp = new bool** [n + 1];
+
+        dp[1] = new bool* [n];
+        for (int i = 0; i < n; i++) {
+            dp[1][i] = new bool [n];
+            for (int j = 0; j < n; j++)
+                dp[1][i][j] = (s1[i] == s2[j]);
+        }
+
+        for (int len = 2; len <= n; len++) {
+            dp[len] = new bool* [n];
+            for (int i = 0; i < n; i++) {
+                dp[len][i] = new bool [n];
+                fill(dp[len][i], dp[len][i] + n, false);
+                for (int j = 0; j < n; j++)
+                    for (int k = 1; k < min(len, n - i); k++)
+                        dp[len][i][j] = dp[len][i][j] ||
+                                        ((j + k < n) && dp[k][i][j] && dp[len - k][i + k][j + k]) ||
+                                        ((j + len - k < n) && dp[k][i][j + len - k] && dp[len - k][i + k][j]);
             }
         }
-        return helper(s1, 0, s2, 0, n);
-    }
-private:
-    int ***dp, n;
-    int helper(string &s1, int sta, string &s2, int stb, int len) {
-        if (dp[sta][stb][len] == -1) 
-            if (len == 1)
-                dp[sta][stb][1] = (s1[sta] == s2[stb]);
-            else {
-                int cnt[256] = {0};
-                for (int i = 0; i < len; i++) {
-                    cnt[s1[sta+i]]++;
-                    cnt[s2[stb+i]]--;
-                }
-                for (int i = 0; i < 256; i++)
-                    if (cnt[i]) {
-                        dp[sta][stb][len] = 0;
-                        return dp[sta][stb][len];
-                    }
-                for (int i = 1; i < len; i++) 
-                    if (dp[sta][stb][len] != 1) 
-                        dp[sta][stb][len] = (helper(s1, sta, s2, stb, i) & helper(s1, sta+i, s2, stb+i, len-i)) |
-                                            (helper(s1, sta, s2, stb+len-i, i) & helper(s1, sta+i, s2, stb, len-i));
-                    else
-                        break;
-            }
-        return dp[sta][stb][len];
+
+        return dp[n][0][0];
     }
 };
