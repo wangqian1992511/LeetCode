@@ -3,11 +3,9 @@ public:
     int maxKilledEnemies(vector<vector<char>>& grid) {
         int ans = 0;
         int n = grid.size();
-        if (!n)
-            return 0;
+        if (!n) return 0;
         int m = grid[0].size();
-        if (!m)
-            return 0;
+        if (!m) return 0;
 
         int** tot = new int* [n];
         for (int i = 0; i < n; i++) {
