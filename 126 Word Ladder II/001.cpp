@@ -1,51 +1,81 @@
 class Solution {
 public:
-    vector<vector<string>> findLadders(string beginWord, string endWord, unordered_set<string> &wordDict) {
-        int n = beginWord.size();
-        now.push_back(beginWord);
-        
-        wordDict.erase(beginWord);
-        wordDict.emplace(endWord);
-            
-        queue<vector<string>> q[2];
-        unordered_set<string> clr;
-        bool ptr = false, stop = false;
-        q[ptr].push(now);
-        
-        while (!q[ptr].empty()) {
-            now = q[ptr].front();
-            q[ptr].pop();
-            for (int i = 0; i < n; i++)
-                for (char ch = 'a'; ch <= 'z'; ch++) {
-                    string t = now.back();
-                    t[i] = ch;
-                    if (wordDict.find(t) != wordDict.end()) {
-                        now.push_back(t);
-                        if (t == endWord){
-                            stop = true;
-                            ans.push_back(now);
-                        }
-                        else if (!stop) {
-                            q[!ptr].push(now);
-                            clr.emplace(t);
-                        }
-                        now.pop_back();
-                    }
-                }
-            
-            if (q[ptr].empty()) {
-                if (stop)
-                    return ans;
-                ptr = !ptr;
-                for (auto it = clr.begin(); it != clr.end(); it++)
-                    wordDict.erase(*it);
-                clr.clear();
-            }
+    vector<vector<string>> findLadders(string &beginWord, string &endWord, unordered_set<string> &wordList) {
+        wordList.erase(endWord);
+        wordList.erase(beginWord);
+        wordLen = endWord.size();
+
+        flag[true] = true;
+        q[true][true].push(endWord);
+        inQ[true].insert(endWord);
+        canUse.insert(endWord);
+
+        flag[false] = true;
+        q[false][true].push(beginWord);
+        inQ[false].insert(beginWord);
+
+        while (!q[true][flag[true]].empty()) {
+            if (expand(wordList, true))
+                break;
+            if (expand(wordList, false))
+                break;
         }
-        
+
+        buildPath(endWord, beginWord);
         return ans;
     }
 private:
+    int wordLen;
+
+    queue<string> q[2][2];
+    unordered_set<string> canUse, inQ[2];
+    bool flag[2];
+
+    unordered_map<string, vector<string>> pre;
     vector<vector<string>> ans;
-    vector<string> now;
+    vector<string> path;
+
+    bool expand(unordered_set<string> &wordList, bool toBack) {
+        bool meet = false;
+        bool f = flag[toBack];
+        while (!q[toBack][f].empty()) {
+            string thisWord = q[toBack][f].front();
+            q[toBack][f].pop();
+            for (int i = 0; i < wordLen; i++) {
+                string nextWord = thisWord;
+                char tc = thisWord[i];
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+                    if (ch == tc) continue;
+                    nextWord[i] = ch;
+                    if (wordList.count(nextWord)) {
+                        wordList.erase(nextWord);
+                        q[toBack][!f].push(nextWord);
+                        inQ[toBack].insert(nextWord);
+                        canUse.insert(nextWord);
+                    }
+                    else if (inQ[!toBack].count(nextWord))
+                        meet = true;
+                    else if (!canUse.count(nextWord))
+                        continue;
+                    if (toBack)
+                        pre[nextWord].push_back(thisWord);
+                    else
+                        pre[thisWord].push_back(nextWord);
+                }
+            }
+        }
+        canUse.clear();
+        flag[toBack] = !f;
+        return meet;
+    }
+
+    void buildPath(string &beginWord, string &endWord) {
+        path.push_back(endWord);
+        if (beginWord == endWord)
+            ans.push_back(path);
+        else
+            for (auto preWord: pre[endWord])
+                buildPath(beginWord, preWord);
+        path.pop_back();
+    }
 };
