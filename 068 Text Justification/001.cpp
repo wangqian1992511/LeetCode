@@ -1,40 +1,38 @@
 class Solution {
 public:
-    vector<string> fullJustify(vector<string> &words, int L) {
+    vector<string> fullJustify(vector<string> &words, int maxWidth) {
         vector<string> ans;
-        int n = words.size();
-        int q = 0;
-        while (q < n) {
+        auto it = words.begin();
+        auto en = words.end();
+
+        while (it != en) {
             vector<string> line;
-            int c = words[q].size();
-            line.push_back(words[q++]);
-            
-            while ((q < n) && (c + 1 + words[q].size() <= L)) {
-                c += 1 + words[q].size();
-                line.push_back(' ' + words[q++]);
+            int c = it->size();
+            line.push_back(*it++);
+
+            while ((it != en) && (c + 1 + it->size() <= maxWidth)) {
+                c += 1 + it->size();
+                line.push_back(' ' + *it++);
             }
 
-            int m = line.size();
-            if ((q == n) || (m == 1)) {
-                while (c != L) {
-                    line[m-1] = line[m-1] + ' ';
-                    c++;
-                }
-            }
+            int n = line.size();
+            if ((it == en) || (n == 1))
+                line[n - 1] = line[n - 1] + string(maxWidth - c, ' ');
             else {
-                while (c != L) {
-                    for (int i = 1; (i < m) && (c != L); i++) {
-                        line[i] = ' ' + line[i];
-                        c++;
-                    }
-                }
+                int t = (maxWidth - c) % (n - 1);
+                int k = (maxWidth - c) / (n - 1);
+                for (int i = 1; i <= t; i++)
+                    line[i] = string(k + 1, ' ') + line[i];
+                for (int i = t + 1; i < n; i++)
+                    line[i] = string(k, ' ') + line[i];
             }
-            
+
             string str = "";
-            for (int i = 0; i < m; i++)
-                str += line[i];
-            ans.push_back(str);            
+            for (auto it: line)
+                str += it;
+            ans.push_back(str);
         }
+
         return ans;
     }
 };
