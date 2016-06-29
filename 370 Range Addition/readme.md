@@ -2,7 +2,7 @@
 
 Assume you have an array of length n initialized with all 0's and are given k update operations.
 
-Each operation is represented as a triplet: [startIndex, endIndex, inc] which increments each element of subarray A[startIndex ... endIndex] (startIndex and endIndex inclusive) with inc.
+Each operation is represented as a triplet: \[startIndex, endIndex, inc\] which increments each element of subarray A \[startIndex ... endIndex\] (startIndex and endIndex inclusive) with inc.
 
 Return the modified array after all k operations were executed.
 
@@ -44,7 +44,9 @@ Our final purpose is to maintain the cumulative increase of an element, when con
 
 Thus, we should build a list inc, such that:
 
-$$ a[k] = \sum_{i = 0}^{k}inc[i] $$
+```
+a[k] = \sum_{i = 0}^{k}inc[i]
+```
 
 Given one update rule [l,r,v], we should conduct:
 
