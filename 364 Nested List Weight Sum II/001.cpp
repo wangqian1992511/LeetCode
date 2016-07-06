@@ -17,17 +17,24 @@
  */
 class Solution {
 public:
-    int depthSum(vector<NestedInteger>& nestedList) {
-        return dfs(nestedList, 1);
+    int depthSumInverse(vector<NestedInteger>& nestedList) {
+        return dfs(nestedList, getDepth(nestedList));
     }
 private:
+    int getDepth(vector<NestedInteger>& nestedList) {
+        int ans = 1;
+        for (auto it: nestedList)
+            if (!it.isInteger())
+                ans = max(ans, 1 + getDepth(it.getList()));
+        return ans;
+    }
     int dfs(vector<NestedInteger>& nestedList, int dep) {
         int ans = 0;
         for (auto it: nestedList)
             if (it.isInteger())
                 ans += it.getInteger() * dep;
             else
-                ans += dfs(it.getList(), dep + 1);
+                ans += dfs(it.getList(), dep - 1);
         return ans;
     }
 };
