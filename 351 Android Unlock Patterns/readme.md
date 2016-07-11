@@ -21,7 +21,7 @@ ans = ans(1) * 4 + ans(2) * 4 + ans(5)
 
 The key strategy is DFS. Since there are only a small number of nodes in one searching path, we are enabled to use bit manipulation to record visited nodes. 
 
-Please refer to [problem 37 Sudoku Solver](https://github.com/wangqian1992511/LeetCode/tree/master/037%20Sudoku%20Solver) for a detailed instruction about bit manipulation in small-scale DFS.
+Please refer to [problem 37 Sudoku Solver](../037%20Sudoku%20Solver) for a detailed instruction about bit manipulation in small-scale DFS.
 
 # Running Time
 
