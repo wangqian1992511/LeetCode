@@ -22,12 +22,15 @@ Result: 1024
 
 The first step is to convert "a" into "a mod c".
 
-We should calculate the modular power digit by digit and multiply them together. Notice that any adjacent digits have the relation:
+Then use the recursive relation:
 
 ```
-a^{k*10^{p+1}} = {a^{k*10^{p}}}^10
+  a^{10^{p+1}x + 10^{p}y} 
+= (a^{10^{p}x})^10 * a^{10^{p}y}
 ```
+
+When calculating the exponential, do not forget to use the technique mentioned in the [previous problem](../050%20Pow(x%2Cn)).
 
 # Running Time
 
-- cpp version: 28 ms (001.cpp)
+- cpp version: 20 ms (001.cpp)

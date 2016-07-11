@@ -2,32 +2,29 @@ class Solution {
 public:
     int superPow(int a, vector<int>& b) {
         c = 1337;
-        a %= c;
-
-        int ex[10];
-        ex[0] = 1;
-        for (int i = 1; i < 10; i++)
-            ex[i] = mul(ex[i - 1], a);
-
-        int ans = 1;
-        for (auto it = b.rbegin(); it != b.rend(); it++) {
-            ans = mul(ans, ex[*it]);
-            for (int i = 0; i < 10; i++)
-                ex[i] = update(ex[i]);
-        }
-
-        return ans;
+        return superExp(a % c, b);
     }
 private:
     int c;
     int mul(int a, int b) {
        return a * b % c;
     }
-    int update(int x) {
-        int t = x;
-        int t2 = mul(t, t);
-        t = mul(t2, t2);
+    int exp(int a, int b) {
+        if (!b)
+            return 1;
+        if (b == 1)
+            return a;
+        int t = exp(a, b >> 1);
         t = mul(t, t);
-        return mul(t, t2);
+        if (b & 1)
+            return mul(t, a);
+        return t;
+    }
+    int superExp(int a, vector<int>& b) {
+        if (b.size() == 1)
+            return exp(a, b[0]);
+        int x = b.back();
+        b.pop_back();
+        return mul(exp(superExp(a, b), 10), exp(a, x));
     }
 };

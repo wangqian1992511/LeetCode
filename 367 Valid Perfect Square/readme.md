@@ -19,7 +19,7 @@ Returns: False
 
 # Solution
 
-First take the [square root](https://github.com/wangqian1992511/LeetCode/tree/master/069%20Sqrt(x)), then take the square. Check if the result is the same as the original input.
+First take the [square root](../069%20Sqrt(x)), then take the square. Check if the result is the same as the original input.
 
 # Running Time
 
