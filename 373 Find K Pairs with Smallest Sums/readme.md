@@ -38,7 +38,7 @@ All possible pairs are returned from the sequence:
 ```
 # Solution
 
-This problem is equivalent to merge n sorted list, when there are m elements in each list. The j-th element in the i-th sorted list can be constructed by:
+This problem is similar to [Problem 23](../023%20Merge%20k%20Sorted%20Lists), when there are m elements in each list. The j-th element in the i-th sorted list can be constructed by:
 
 ```
 a[i][j] = nums1[i] + nums2[j]
@@ -52,4 +52,4 @@ The time complexity is O(n+klog(n)).
 
 # Running Time
 
-- cpp version: 20 ms (001.cpp)
+- cpp version: 16 ms (001.cpp)

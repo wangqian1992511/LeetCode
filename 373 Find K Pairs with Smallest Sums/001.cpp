@@ -25,11 +25,10 @@ public:
             heap.pop();
             ans.push_back({nums1[node.idx1], nums2[node.idx2]});
             node.idx2++;
-            if (node.idx2 == m)
-                node.key = INT_MAX;
-            else
+            if (node.idx2 < m) {
                 node.key = nums1[node.idx1] + nums2[node.idx2];
-            heap.push(node);
+                heap.push(node);
+            }
         }
 
         return ans;
