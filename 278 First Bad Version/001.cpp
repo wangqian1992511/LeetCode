@@ -6,7 +6,7 @@ public:
     int firstBadVersion(int n) {
         int l = 1, r = n;
         while (l < r) {
-            int m = (int64_t(l) + r) >> 1;
+            int m = l + (r - l) / 2;
             if (isBadVersion(m))
                 r = m;
             else
