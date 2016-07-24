@@ -7,21 +7,22 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
- struct ansT {
+struct ansT {
     bool isValid;
-    int minV, maxV;
+    int size, minV, maxV;
 };
 
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) {
-        return helper(root).isValid;
+    int largestBSTSubtree(TreeNode* root) {
+        return helper(root).size;
     }
 private:
     ansT helper(TreeNode* root) {
         ansT ansThis;
         if (!root) {
             ansThis.isValid = true;
+            ansThis.size = 0;
             return ansThis;
         }
 
@@ -30,11 +31,13 @@ private:
 
         if (isValid(ansLeft, ansRight, root)) {
             ansThis.isValid = true;
+            ansThis.size = ansLeft.size + 1 + ansRight.size;
             ansThis.minV = root->left ? ansLeft.minV : root->val;
             ansThis.maxV = root->right ? ansRight.maxV : root->val;
         }
         else {
             ansThis.isValid = false;
+            ansThis.size = max(ansLeft.size, ansRight.size);
         }
 
         return ansThis;
