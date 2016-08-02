@@ -8,7 +8,7 @@ Note that 1 is typically treated as an ugly number.
 
 # Solution
 
-This problem is a specific case of [Problem 313](../).
+This problem is a specific case of [Problem 313](../313%20Super%20Ugly%20Number).
 
 # Running Time
 
