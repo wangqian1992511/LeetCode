@@ -4,7 +4,7 @@ class Solution:
     # @return {integer[]}
     def findOrder(self, numCourses, prerequisites):
         dgr = [0] * numCourses
-        adj = [[] for i in range(numCourses)] 
+        adj = [[] for i in range(numCourses)]
         for y, x in prerequisites:
             dgr[y] += 1
             adj[x].append(y)

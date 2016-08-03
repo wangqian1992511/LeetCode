@@ -1,35 +1,29 @@
 class Solution {
 public:
     bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
-        int *first = new int [numCourses + 1];
+        vector<int> *adj = new vector<int> [numCourses];
         int *deg = new int [numCourses];
-        fill(first, first + numCourses, INT_MAX);
         fill(deg, deg + numCourses, 0);
-        
-        sort(prerequisites.begin(), prerequisites.end());
-        int nEdge = prerequisites.size();
-        first[numCourses] = nEdge;
-        for (int i = nEdge - 1; i >= 0; i--) {
-            first[prerequisites[i].first] = i; 
-            deg[prerequisites[i].second]++;
+
+        for (auto it: prerequisites) {
+            adj[it.second].push_back(it.first);
+            deg[it.first]++;
         }
-        
-        queue<int> zero;
-        for (int i = numCourses - 1; i >= 0; i--) {
-            if (first[i] > first[i + 1])
-                first[i] = first[i + 1];
+
+        queue<int> q;
+        for (int i = 0; i < numCourses; i++)
             if (!deg[i])
-                zero.push(i);
-        }
-        
-        int d = 0; 
-        while (!zero.empty()) {
-            int i = zero.front();
-            zero.pop();
+                q.push(i);
+
+        int d = 0;
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
             d++;
-            for (int j = first[i]; j < first[i+1]; j++)
-                if (! --deg[prerequisites[j].second])
-                    zero.push(prerequisites[j].second);
+            for (auto v: adj[u]) {
+                if (! --deg[v])
+                    q.push(v);
+            }
         }
         return d == numCourses;
     }

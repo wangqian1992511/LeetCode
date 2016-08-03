@@ -8,40 +8,38 @@ public:
             int l = min(s.size(), t.size());
             for (int j = 0; j < l; j++)
                 if (s[j] != t[j]) {
-                    edge[s[j]].emplace(t[j]);
+                    edge[s[j]].insert(t[j]);
                     break;
                 }
         }
-        
-        int deg[256];
-        fill(deg, deg + 256, 0);
-        for (auto e = edge.begin(); e != edge.end(); e++)
-            for (auto y = e->second.begin(); y != e->second.end(); y++)
-                deg[*y]++;
-                
+
+        unordered_map<char, int> deg;
+        for (auto e: edge)
+            for (auto u: e.second)
+                deg[u]++;
+
         unordered_set<char> cand;
-        for (int i = 0; i < n; i++)
-            for (auto ch: words[i])
-                cand.emplace(ch);
-        n = cand.size();
-                        
-        queue<char> q;  
-        for (auto ch = cand.begin(); ch != cand.end(); ch++)
-            if (!deg[*ch])
-                q.push(*ch);
-        
+        queue<char> q;
+        for (auto s: words)
+            for (auto ch: s)
+                if (!cand.count(ch)) {
+                    cand.insert(ch);
+                    if (!deg[ch])
+                        q.push(ch);
+                }
+
         string st = "";
         while (!q.empty()) {
-            char x = q.front();
+            char u = q.front();
             q.pop();
-            st += x;
-            for (auto e = edge[x].begin(); e != edge[x].end(); e++) {
-                deg[*e]--;
-                if (!deg[*e])
-                    q.push(*e);
+            st.push_back(u);
+            for (auto v: edge[u]) {
+                deg[v]--;
+                if (!deg[v])
+                    q.push(v);
             }
         }
-        
-        return st.size() == n ? st : "";
+
+        return st.size() == cand.size() ? st : "";
     }
 };
