@@ -39,4 +39,4 @@ The insert and remove function can be easily implemented with unordered_set. How
 
 # Running Time
 
-- cpp version: 184 ms (001.cpp)
+- cpp version: 216 ms (001.cpp)
