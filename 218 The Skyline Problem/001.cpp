@@ -20,46 +20,35 @@ struct sortCompT {
 class Solution {
 public:
     vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings) {
-        buildData(buildings);
-        sort(data.begin(), data.end(), sortCompT());
-        findAns();
-        return ans;
-    }
-private:
-    priority_queue<nodeT, vector<nodeT>, heapCompT> heap;
-    vector<pair<int, int>> ans;
-    vector<nodeT> data;
-    vector<bool> isPop;
-    int n;
-    void buildData(vector<vector<int>>& buildings) {
-        n = buildings.size();
-        for (int i = 0; i < n; i++) {
-            int xa = buildings[i][0];
-            int xb = buildings[i][1];
-            int y = buildings[i][2];
-            data.push_back({xa, y, i, true});
-            data.push_back({xb, y, i, false});
-            isPop.push_back(false);
+        vector<nodeT> data;
+        int cnt = 0;
+        for (auto it: buildings) {
+            data.push_back({it[0], it[2], cnt, true});
+            data.push_back({it[1], it[2], cnt, false});
+            cnt++;
         }
-        n <<= 1;
-    }
-    void findAns() {
-        int lastH = 0, nowH;
-        for (int i = 0; i < n; i++) {
-            nodeT edge = data[i];
+        vector<bool> isPop (cnt + 1, false);
+        sort(data.begin(), data.end(), sortCompT());
+
+        priority_queue<nodeT, vector<nodeT>, heapCompT> heap;
+        heap.push({0, 0, cnt + 1, true});
+        vector<pair<int, int>> ans;
+        int lastH = 0;
+        for (auto edge: data) {
             if (edge.isLeft) {
                 heap.push(edge);
             }
             else {
                 isPop[edge.num] = true;
-                while (!heap.empty() && isPop[heap.top().num]) 
+                while (!heap.empty() && isPop[heap.top().num])
                     heap.pop();
             }
-            nowH = heap.empty() ? 0 : heap.top().y;
+            int nowH = heap.top().y;
             if (nowH != lastH) {
                 ans.push_back({edge.x, nowH});
                 lastH = nowH;
             }
-        }        
+        }
+        return ans;
     }
 };

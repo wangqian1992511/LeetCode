@@ -1,32 +1,31 @@
-struct pathT {
-    string data;
-    int dep;
-};
-
 class Solution {
 public:
-    int ladderLength(string beginWord, string endWord, unordered_set<string>& wordDict) {
-        int n = beginWord.size();
-        wordDict.erase(beginWord);
-        wordDict.emplace(endWord);
-            
-        queue<pathT> q;
-        q.push({beginWord, 1});
-        while (!q.empty()) {
-            pathT x = q.front();
+    int ladderLength(string beginWord, string endWord, unordered_set<string>& wordList) {
+        int len = beginWord.size();
+        wordList.insert(endWord);
+        wordList.erase(beginWord);
+
+        unordered_map<string, int> dep;
+        dep[beginWord] = 1;
+        queue<string> q;
+        q.push(beginWord);
+        while (!q.empty() && wordList.count(endWord)) {
+            string s = q.front();
             q.pop();
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < len; i++) {
+                string t = s;
                 for (char ch = 'a'; ch <= 'z'; ch++) {
-                    string t = x.data;
+                    if (s[i] == ch)
+                        continue;
                     t[i] = ch;
-                    if (wordDict.find(t) != wordDict.end()) {
-                        if (t == endWord)
-                            return x.dep + 1;
-                        q.push({t, x.dep + 1});
-                        wordDict.erase(t);
+                    if (wordList.count(t)) {
+                        wordList.erase(t);
+                        dep[t] = dep[s] + 1;
+                        q.push(t);
                     }
                 }
+            }
         }
-        return 0;
+        return dep[endWord];
     }
 };
