@@ -7,34 +7,28 @@
  *     Interval(int s, int e) : start(s), end(e) {}
  * };
  */
-struct Comp {
+struct CompT {
     bool operator()(Interval &a, Interval &b) {
-        if (a.start < b.start) return true;
-        if (a.start > b.start) return false;
-        if (a.end > b.end) return true;
-        if (a.end < b.end) return false;
-        return false;
+        return (a.start < b.start) || ((a.start == b.start) && (a.end > b.end));
     }
 };
+
 class Solution {
 public:
     vector<Interval> merge(vector<Interval>& intervals) {
-        sort(intervals.begin(), intervals.end(), Comp());
+        sort(intervals.begin(), intervals.end(), CompT());
         vector<Interval> ans;
-        int n = intervals.size();
-        int p = 0, q, e;
-        while (p < n) {
-            q = p + 1;
-            e = intervals[p].end;
-            while ((q < n) && (intervals[q].start <= e)) {
-                if (intervals[q].end > e)
-                    e = intervals[q].end;
-                q++;
+        Interval current(INT_MIN, INT_MIN);
+        for (auto it: intervals) {
+            if (current. end >= it.start)
+                current.end = max(current.end, it.end);
+            else {
+                ans.push_back(current);
+                current = it;
             }
-            Interval tmp(intervals[p].start, e);
-            ans.push_back(tmp);
-            p = q;
         }
+        ans.push_back(current);
+        ans.erase(ans.begin());
         return ans;
     }
 };

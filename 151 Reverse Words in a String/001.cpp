@@ -1,27 +1,27 @@
 class Solution {
 public:
     void reverseWords(string &s) {
-        int n = s.size();
-        string tmp = "", ans = "";
-        bool flag = false;
-        for (int i = 0; i < n; i ++)
-            if (s[i] != ' ')
-                tmp += s[i];
-            else if (tmp.size()) {
-                if (!flag) {
-                    flag = true;
-                    ans = tmp;
-                }
-                else
-                    ans = tmp + ' ' + ans;
-                tmp = "";
-            }
-        if (tmp.size()) {
-            if (!flag) 
-                ans = tmp;
+        ans = "";
+        t = "";
+        isFirst = true;
+        for (char ch: s)
+            if (ch != ' ')
+                t.push_back(ch);
             else
-                ans = tmp + ' ' + ans;
-        }
+                tryAppend();
+        tryAppend();
         s = ans;
+    }
+private:
+    string ans, t;
+    bool isFirst;
+    void tryAppend() {
+        if (t.size()) {
+            if (!isFirst)
+                ans = " " + ans;
+            ans = t + ans;
+            isFirst = false;
+        }
+        t = "";
     }
 };

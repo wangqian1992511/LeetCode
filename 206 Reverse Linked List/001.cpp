@@ -9,19 +9,12 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* tail = new ListNode(0);
-        return helper(head, tail);
-    }
-private:
-    ListNode* helper(ListNode* head, ListNode* &tail) {
-        if (!head || !head->next) {
-            tail = head;
+        if (!head || !head->next)
             return head;
-        }
-        ListNode *ans = helper(head->next, tail);
-        tail->next = head;
-        tail = head;
-        tail->next = NULL;
+        ListNode* second = head->next;
+        ListNode* ans = reverseList(second);
+        second->next = head;
+        head->next = NULL;
         return ans;
     }
 };

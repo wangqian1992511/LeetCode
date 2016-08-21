@@ -1,37 +1,16 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        int p, q, n, t, ans;
-        n = s.size();
-        ans = t = p = q = 0;
-        
-        bool vis[256];
-        fill(vis, vis + 256, 0);
-        
-        while (true) {
-            while ((q < n) && (!vis[s[q]])) {
-                vis[s[q]] = true;
-                t++;
-                q++;
-            }
-            
-            if (t > ans)
-                ans = t;
-                
-            if (q >= n)
-                break;
-            
-            while (s[p] != s[q]) {
-                vis[s[p]] = false;
-                t--;
-                p++;
-            }
-            
-            vis[s[p]] = false;
-            t--;
-            p++;
+        int p = 0, q = 0, ans = 0;
+        bool hasChar[256];
+        fill(hasChar, hasChar + 256, false);
+        while (q < int(s.size())) {
+            while (hasChar[s[q]])
+                hasChar[s[p++]] = false;
+            while ((q < int(s.size())) && (!hasChar[s[q]]))
+                hasChar[s[q++]] = true;
+            ans = max(ans, q - p);
         }
-        
         return ans;
     }
 };

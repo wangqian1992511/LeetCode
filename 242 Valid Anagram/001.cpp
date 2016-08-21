@@ -1,17 +1,13 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        if (s.size() != t.size())
-            return false;
-        int n = s.size();
-        int cnt[26];
-        fill(cnt, cnt + 26, 0);
-        for (int i = 0; i < n; i++) {
-            cnt[s[i] - 'a']++;
-            cnt[t[i] - 'a']--;
-        }
-        for (int i = 0; i < 26; i++)
-            if (cnt[i])
+        unordered_map<char, int> cnt;
+        for (auto ch: s)
+            cnt[ch]++;
+        for (auto ch: t)
+            cnt[ch]--;
+        for (auto it: cnt)
+            if (it.second != 0)
                 return false;
         return true;
     }
