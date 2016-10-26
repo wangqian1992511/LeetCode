@@ -1,28 +1,31 @@
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-        int n = nums.size();
-        return qSearch(nums, 0, n - 1, k - 1);
+        return helper(0, nums.size() - 1, nums, k - 1);
     }
 private:
-    int qSearch(vector<int> &nums, int st, int en, int k) {
-        if (st == en)  return nums[st];
+    int helper(int st, int en, vector<int>& nums, int k) {
         int l = st, r = en;
-        int key = nums[(st + en) >> 1];
-        while (l < r) {
-            while (nums[l] > key) l++;
-            while (nums[r] < key) r--;
+        int m = l + (r - l) / 2;
+        int key = nums[m];
+
+        while (l <= r) {
+            while (nums[l] > key)
+                l++;
+            while (nums[r] < key)
+                r--;
             if (l <= r) {
                 swap(nums[l], nums[r]);
-                l++; 
+                l++;
                 r--;
             }
         }
+
         if (k <= r)
-            return qSearch(nums, st, r, k);
+            return helper(st, r, nums, k);
         else if (k >= l)
-            return qSearch(nums, l, en, k);
+            return helper(l, en, nums, k);
         else
-            return nums[r + 1];
+            return nums[k];
     }
 };

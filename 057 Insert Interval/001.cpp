@@ -11,22 +11,29 @@ class Solution {
 public:
     vector<Interval> insert(vector<Interval> &intervals, Interval newInterval) {
         vector<Interval> ans;
-        int i, n = intervals.size();
-        for (i = 0; i < n; i++) 
-            if (intervals[i].end < newInterval.start)
-                ans.push_back(intervals[i]);
+        vector<Interval>::iterator it = intervals.begin();
+
+        while (it != intervals.end()) {
+            if (it->end < newInterval.start)
+                ans.push_back(*it);
             else
                 break;
-        for (; i < n; i++)
-            if ((intervals[i].end >= newInterval.start) && (intervals[i].start <= newInterval.end)) {
-                newInterval.start = min(intervals[i].start, newInterval.start);
-                newInterval.end = max(intervals[i].end, newInterval.end);
+            it++;
+        }
+        while (it != intervals.end()) {
+            if ((it->end >= newInterval.start) && (it->start <= newInterval.end)) {
+                newInterval.start = min(it->start, newInterval.start);
+                newInterval.end = max(it->end, newInterval.end);
             }
             else
                 break;
+            it++;
+        }
         ans.push_back(newInterval);
-        for (; i < n; i++)
-            ans.push_back(intervals[i]);
+        while (it != intervals.end()) {
+            ans.push_back(*it);
+            it++;
+        }
         return ans;
     }
 };

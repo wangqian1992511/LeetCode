@@ -1,5 +1,5 @@
 /**
- * Definition for binary tree
+ * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
  *     TreeNode *left;
@@ -9,31 +9,31 @@
  */
 class Solution {
 public:
-    vector<vector<int>> levelOrder(TreeNode *root) {
+    vector<vector<int>> levelOrder(TreeNode* root) {
         vector<vector<int>> ans;
-        vector<int> value;
-        vector<TreeNode*> pre, now;
+
         if (root) {
-            now.push_back(root);
-            value.push_back(root->val);
-        }
-        while (! now.empty()) {
-            ans.push_back(value);
-            value.clear();
-            pre = now;
-            now.clear();
-            int n = pre.size();
-            for (int i = 0 ; i < n; i++) {
-                if (pre[i]->left) {
-                    now.push_back(pre[i]->left);
-                    value.push_back(pre[i]->left->val);
+            vector<TreeNode*> thisLevelNodes(1, root);
+            vector<int> vals(1, root->val);
+
+            while (!thisLevelNodes.empty()) {
+                ans.push_back(vals);
+                vals.clear();
+                vector<TreeNode*> nextLevelNodes;
+                for (auto it: thisLevelNodes) {
+                    if (it->left) {
+                        nextLevelNodes.push_back(it->left);
+                        vals.push_back(it->left->val);
+                    }
+                    if (it->right) {
+                        nextLevelNodes.push_back(it->right);
+                        vals.push_back(it->right->val);
+                    }
                 }
-                if (pre[i]->right) {
-                    now.push_back(pre[i]->right);
-                    value.push_back(pre[i]->right->val);
-                }
+                thisLevelNodes = nextLevelNodes;
             }
         }
+
         return ans;
     }
 };

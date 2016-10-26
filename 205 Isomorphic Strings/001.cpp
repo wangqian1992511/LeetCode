@@ -1,18 +1,26 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        int map[256], org[256];
-        fill(map, map+256, -1);
-        fill(org, org+256, -1);
-        int n = s.size();
-        for (int i = 0; i < n; i++) {
-            char sc = s[i], tc = t[i];
-            if ((map[sc] == -1) && (org[tc] == -1)) {
-                map[sc] = tc;
-                org[tc] = sc;
-            }
-            else if (map[sc] != tc)
+        if (s.size() != t.size())
+            return false;
+        unordered_map<char, char> sToT, tToS;
+        string::iterator sIt = s.begin();
+        string::iterator tIt = t.begin();
+        while (sIt != s.end()) {
+            bool sMapped = sToT.count(*sIt);
+            bool tMapped = tToS.count(*tIt);
+            if (sMapped != tMapped)
                 return false;
+            else if (!sMapped) {
+                sToT[*sIt] = *tIt;
+                tToS[*tIt] = *sIt;
+            }
+            else if (sToT[*sIt] != *tIt)
+                return false;
+            else if (tToS[*tIt] != *sIt)
+                return false;
+            sIt++;
+            tIt++;
         }
         return true;
     }

@@ -1,26 +1,39 @@
 class WordDistance {
 public:
     WordDistance(vector<string>& words) {
-        int n = words.size();
-        for (int i = 0; i < n; i++)
-            pos[words[i]].push_back(i);
+        int idx = 0;
+        for (auto it: words) {
+            index[it].push_back(idx++);
+        }
     }
 
     int shortest(string word1, string word2) {
-        auto va = pos[word1].begin();
-        auto vb = pos[word2].begin();
+        if (!solutions.count(word1) || !solutions[word1].count(word2)) {
+            int x = calcDist(word1, word2);
+            solutions[word1][word2] = x;
+            solutions[word2][word1] = x;
+            return x;
+        }
+        return solutions[word1][word2];
+    }
+private:
+    unordered_map<string, unordered_map<string, int>> solutions;
+    unordered_map<string, vector<int>> index;
+
+    int calcDist(string& word1, string& word2) {
+        vector<int>::iterator word1It = index[word1].begin();
+        vector<int>::iterator word2It = index[word2].begin();
         int ans = INT_MAX;
-        while ((va != pos[word1].end()) && (vb != pos[word2].end())) {
-            ans = min(ans, abs(*va - *vb));
-            if (*va < *vb) 
-                va++;
-            else
-                vb++;
+        while ((word1It != index[word1].end()) && (word2It != index[word2].end())) {
+            ans = min(ans, abs(*word1It - *word2It));
+            if (*word1It < *word2It) {
+                word1It++;
+            } else {
+                word2It++;
+            }
         }
         return ans;
     }
-private:
-    unordered_map<string, vector<int>> pos;
 };
 
 

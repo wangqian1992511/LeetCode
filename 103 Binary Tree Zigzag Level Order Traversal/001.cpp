@@ -1,5 +1,5 @@
 /**
- * Definition for binary tree
+ * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
  *     TreeNode *left;
@@ -9,41 +9,35 @@
  */
 class Solution {
 public:
-    vector<vector<int> > zigzagLevelOrder(TreeNode *root) {
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         vector<vector<int>> ans;
-        queue<TreeNode*> q;
-        int cnt = 0;
+
         if (root) {
-            q.push(root);
-            cnt = 1;
+            vector<TreeNode*> thisLevelNodes(1, root);
+            vector<int> vals(1, root->val);
+            bool reverseLevel = false;
+
+            while (!thisLevelNodes.empty()) {
+                if (reverseLevel)
+                    reverse(vals.begin(), vals.end());
+                reverseLevel = !reverseLevel;
+                ans.push_back(vals);
+                vals.clear();
+                vector<TreeNode*> nextLevelNodes;
+                for (auto it: thisLevelNodes) {
+                    if (it->left) {
+                        nextLevelNodes.push_back(it->left);
+                        vals.push_back(it->left->val);
+                    }
+                    if (it->right) {
+                        nextLevelNodes.push_back(it->right);
+                        vals.push_back(it->right->val);
+                    }
+                }
+                thisLevelNodes = nextLevelNodes;
+            }
         }
-        bool isLeft = true;
-        while (!q.empty()) {
-            vector<int> tmp;
-            int tCnt = 0;
-            for (int i = 0; i < cnt; i++) {
-                TreeNode *node = q.front();
-                tmp.push_back(node->val);
-                if (node->left) {
-                    q.push(node->left);
-                    tCnt++;
-                }
-                if (node->right) {
-                    q.push(node->right);
-                    tCnt++;
-                }
-                q.pop();
-            } 
-            if (!isLeft)
-                for (int i = 0; i < (cnt >> 1); i++) {
-                    int k = tmp[i];
-                    tmp[i] = tmp[cnt - i - 1];
-                    tmp[cnt - i - 1] = k;
-                }
-            ans.push_back(tmp);
-            cnt = tCnt;
-            isLeft = !isLeft;
-        }
+
         return ans;
     }
 };

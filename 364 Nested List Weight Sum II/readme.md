@@ -14,7 +14,7 @@ Given the list [1,[4,[6]]], return 17. (one 1 at depth 3, one 4 at depth 2, and 
 
 # Solution
 
-Use two pass DFS. The first pass is used to find the maximum depth of this tree:
+Use two pass DFS (001.cpp). The first pass is used to find the maximum depth of this tree:
 
 ```
 dep[root] = max{dep[root.left], dep[root.right]} + 1
@@ -26,6 +26,9 @@ Then, during the second pass, we can add the weighted sum together:
 ans += \sum_{root is integer} root * dep[root]
 ```
 
+We can design an one pass DFS solution (002.cpp). In this version, we will first calculate the sum on each level and the maximum depth. Then, the summation will be conducted in the end.
+
 # Running Time
 
-- cpp version: 4 ms (001.cpp)
+- cpp version: 3 ms (001.cpp)
+- cpp version: 3 ms (002.cpp)
