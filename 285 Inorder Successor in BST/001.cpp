@@ -15,20 +15,14 @@ public:
             while (p->left)
                 p = p->left;
             return p;
-        }
-        return helper(root, p);
-    }
-private:
-    TreeNode* helper(TreeNode* root, TreeNode* noRight) {
-        if (noRight->val > root->val)
-            helper(root->right, noRight);
-        else if (noRight->val == root->val)
+        } else if (p->val == root->val) {
             return NULL;
-        else {
-            TreeNode* ans = helper(root->left, noRight);
-            if (ans)
-                return ans;
-            return root;
+        } else if (p->val > root->val) {
+            return inorderSuccessor(root->right, p);
+        } else {
+            TreeNode* ans = inorderSuccessor(root->left, p);
+            return ans ? ans : root;
         }
+        return NULL;
     }
 };
